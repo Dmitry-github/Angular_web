@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Number of attendecies</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of meetings">
+    <td>{{item.title}}</td>
+    <td>{{item.date}}</td>
+    <td>N{{item.numberOfAttendencies}}</td>
+    <td><a routerLink="/attend/0">Attend</a></td>
+  </tr>
+  </tbody>
+</table>

@@ -10,8 +10,8 @@ export class MeetingsServiceService {
 
     const meetings: Array<Meeting> = [];
 
-    meetings.push({title: 'Concert', date: new Date(Date.parse('01.01.2020')), numberOfAttendencies: 100});
-    meetings.push({title: 'Concert again', date: new Date(Date.parse('02.01.2020')), numberOfAttendencies: 1000});
+    meetings.push({title: 'Football match', date: new Date(Date.parse('01.01.2020')), numberOfAttendencies: 100});
+    meetings.push({title: 'Racing', date: new Date(Date.parse('02.01.2020')), numberOfAttendencies: 1000});
 
     return of(meetings);
   }

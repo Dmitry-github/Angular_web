@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MeetingsServiceService} from '../meetings-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-meetings-attend',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeetingsAttendComponent implements OnInit {
 
-  constructor() { }
+  public model: AttendMeetingModel;
+
+  constructor(private service: MeetingsServiceService, private router: Router) {
+
+    this.model = new AttendMeetingModel();
+    this.model.Name = '';
+    this.model.Email = '';
+
+  }
 
   ngOnInit(): void {
   }
 
+}
+
+export class AttendMeetingModel {
+  public Name: string;
+  public Email: string;
 }

@@ -1,16 +1,20 @@
-<table>
-  <tbody>
-  <tr>
-    <th>Name</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Email</th>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a routerLink="">ok</a></td>
-    <td><a routerLink="">cancel</a></td>
-  </tr>
-  </tbody>
-</table>
+<h2>Attend a meeting</h2>
+<form #attendMeetingsForm = "ngForm">
+<div>
+  <label>Name</label>
+</div>
+<div>
+  <input name = "Name" #Name = "ngModel" required = "true" [(ngModel)]="model.Name" type = "text"/>
+  <span [hidden]="Name.pristine || Name.valid" style = "color: red;">Fill in this field</span>
+</div>
+<div>
+  <label>Email</label>
+</div>
+<div>
+  <input name = "Email" #Email = "ngModel" required = "true" [(ngModel)]="model.Email" type = "text">
+  <span [hidden]="Email.pristine || Email.valid" style = "color: red;">Fill in this field</span>
+</div>
+
+  <button [disabled]="!attendMeetingsForm.form.valid">ok</button>
+  <button routerLink="">cancel</button>
+</form>

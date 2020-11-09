@@ -12,8 +12,8 @@
     <td>{{item.title}}</td>
     <td>{{item.date}}</td>
     <td>N{{item.numberOfAttendencies}}</td>
-    <td><a routerLink="/attend/0">Attend</a></td>
+    <td><a [routerLink]="['/', 'attend', item.id]">Attend</a></td>
   </tr>
-  <a routerLink="/create/0">Create</a>
+  <button routerLink="/create/0">Create</button>
   </tbody>
 </table>

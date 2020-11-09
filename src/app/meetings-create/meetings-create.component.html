@@ -1,20 +1,20 @@
-<table>
-  <tbody>
-  <tr>
-    <th>Title</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Date</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Time</th>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a routerLink="">ok</a></td>
-    <td><a routerLink="">cancel</a></td>
-  </tr>
-  </tbody>
-</table>
+<h2>Create a meeting<div [innerText]="model.title"></div></h2>
+<form #newMeetingsForm = "ngForm">
+<div>
+  <label>Title</label>
+</div>
+<div>
+  <input name = "title" #title = "ngModel" required = "true" [(ngModel)]="model.title" type = "text"/>
+  <span [hidden]="title.pristine || title.valid" style = "color: red;">Fill in this field</span>
+</div>
+<div>
+  <label>Date</label>
+</div>
+<div>
+  <input name = "date" [(ngModel)]="model.date" type = "text">
+</div>
+
+<button (click)="create()" [disabled] = "!newMeetingsForm.form.valid" type = "submit">ok</button>
+<button routerLink="">cancel</button>
+</form>
+
